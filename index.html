@@ -1,492 +1,1222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hausärzte im Zentrum Kiel | Dr. Schuberth & Dr. Sponholz</title>
-    <style>
-        :root {
-            --primary: #1a3a5f;
-            --secondary: #00a8cc;
-            --accent: #eefbff;
-            --text: #334155;
-            --text-light: #64748b;
-            --bg: #f8fafc;
-            --white: #ffffff;
-            --border: #e2e8f0;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hausärztlich-Internistische Gemeinschaftspraxis | Bielefeld</title>
+  <meta name="description" content="Hausärztlich-Internistische Gemeinschaftspraxis Dr. med. Gabriele Jahnke und Christine Scholand im Ärztehaus im Zentrum in Bielefeld.">
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --surface: #ffffff;
+      --surface-soft: #eaf1ef;
+      --surface-deep: #dfeae7;
+      --text: #173033;
+      --muted: #5d7072;
+      --primary: #19494c;
+      --primary-2: #245c60;
+      --accent: #6d968f;
+      --line: rgba(23, 48, 51, 0.12);
+      --shadow: 0 18px 50px rgba(20, 53, 56, 0.10);
+      --shadow-soft: 0 10px 30px rgba(20, 53, 56, 0.08);
+      --radius-lg: 32px;
+      --radius-md: 22px;
+      --radius-sm: 16px;
+      --danger-bg: #f8ece9;
+      --danger-border: #ddb7ad;
+      --danger-text: #71382e;
+      --max: 1180px;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(109, 150, 143, 0.18), transparent 28rem),
+        radial-gradient(circle at top left, rgba(25, 73, 76, 0.08), transparent 24rem),
+        var(--bg);
+      line-height: 1.6;
+    }
 
-        /* Header & Navigation */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 90px;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary);
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
 
-        .logo span {
-            color: var(--secondary);
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 400;
-            text-transform: none;
-        }
+    .section {
+      padding: 105px 0;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
+    .section-tight {
+      padding: 78px 0;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
 
-        .btn-call {
-            background: var(--primary);
-            color: var(--white) !important;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
 
-        .btn-call:hover {
-            background: var(--secondary);
-        }
+    .section-head h2,
+    .hero h1 {
+      margin: 0;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.85)), 
-                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 120px 0 100px;
-            text-align: center;
-        }
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+    .section-head p {
+      margin: 18px 0 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
 
-        .hero-badges {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 750;
+      transition: 0.22s ease;
+      border: 1px solid transparent;
+    }
 
-        .badge {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(5px);
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(25, 73, 76, 0.22);
+    }
 
-        /* Generic Section Styles */
-        section {
-            padding: 100px 0;
-        }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--primary-2);
+    }
 
-        h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: var(--line);
+      color: var(--primary);
+      backdrop-filter: blur(12px);
+    }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #fff;
+    }
 
-        /* Intro Section */
-        .intro-text {
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            color: var(--text-light);
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(23, 48, 51, 0.08);
+      background: rgba(244, 247, 246, 0.86);
+      backdrop-filter: blur(18px);
+    }
 
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
 
-        .service-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
-        }
+    .brand strong {
+      font-size: 1rem;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
 
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
 
-        .service-card h3::before {
-            content: '✓';
-            color: var(--secondary);
-            font-weight: bold;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
 
-        /* Team Section */
-        .team-flex {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
 
-        .doctor-card {
-            background: var(--white);
-            flex: 1;
-            min-width: 300px;
-            max-width: 480px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
-        }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      background: var(--accent);
+      transition: transform 0.22s ease;
+    }
 
-        .doctor-info {
-            padding: 40px 30px;
-        }
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
-        .doctor-info h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
+    .nav-contact {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      white-space: nowrap;
+    }
 
-        .doctor-info .title {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: block;
-        }
+    .hero {
+      padding: 84px 0 92px;
+    }
 
-        /* Contact & Hours */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
+      gap: 42px;
+      align-items: center;
+    }
 
-        .hours-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
+    .hero h1 {
+      max-width: 840px;
+      font-size: clamp(2.8rem, 6vw, 5.4rem);
+    }
 
-        .hours-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-        .hours-table td {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-        }
+    .hero-copy {
+      max-width: 720px;
+      margin-top: 24px;
+      font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+      color: var(--muted);
+    }
 
-        .hours-table tr:last-child td {
-            border-bottom: none;
-        }
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
 
-        .day {
-            font-weight: 600;
-            color: var(--primary);
-        }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
 
-        .contact-info-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-        }
+    .hero-panel {
+      position: relative;
+      padding: 26px;
+      border: 1px solid rgba(23, 48, 51, 0.10);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-        .contact-info-box h3 { margin-bottom: 20px; }
-        .contact-item { margin-bottom: 20px; display: flex; gap: 15px; }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -90px -90px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(109, 150, 143, 0.22);
+    }
 
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 80px 0 30px;
-        }
+    .panel-top {
+      position: relative;
+      z-index: 1;
+      padding: 25px;
+      border-radius: 24px;
+      background: var(--primary);
+      color: #fff;
+    }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
+    .panel-top small {
+      display: block;
+      margin-bottom: 10px;
+      opacity: 0.76;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
 
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
+    .panel-top strong {
+      display: block;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9rem;
-        }
+    .panel-top p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+    }
 
-        .footer-legal a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+    .panel-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
 
-        .footer-legal a:hover { color: var(--secondary); }
+    .panel-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-weight: 700;
+    }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            .contact-grid { grid-template-columns: 1fr; }
-            section { padding: 60px 0; }
-        }
-    </style>
+    .panel-item span:last-child {
+      color: var(--primary);
+      text-align: right;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .intro-card,
+    .content-card,
+    .service-card,
+    .team-card,
+    .hours-card,
+    .contact-card,
+    .info-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .intro-card {
+      padding: 34px;
+      background:
+        linear-gradient(145deg, rgba(25, 73, 76, 0.95), rgba(36, 92, 96, 0.92));
+      color: #fff;
+    }
+
+    .intro-card h3 {
+      margin: 0 0 18px;
+      font-size: 1.7rem;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+
+    .intro-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.03rem;
+    }
+
+    .content-card {
+      padding: 34px;
+    }
+
+    .content-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .team-card {
+      padding: 30px;
+    }
+
+    .team-card h3 {
+      margin: 0;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .team-role {
+      margin-top: 8px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .team-card p {
+      margin: 18px 0 0;
+      color: var(--muted);
+    }
+
+    .team-note {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 20px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 28px;
+    }
+
+    .service-number {
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .service-card h3 {
+      margin: 0 0 16px;
+      font-size: 1.45rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card ul,
+    .prep-list,
+    .topic-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-card li,
+    .prep-list li {
+      position: relative;
+      padding-left: 21px;
+      margin-top: 11px;
+      color: var(--muted);
+    }
+
+    .service-card li::before,
+    .prep-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-50%);
+    }
+
+    .prep-wrap {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      padding: 34px;
+    }
+
+    .info-card h3 {
+      margin: 0 0 16px;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .highlight-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px;
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .highlight-box strong {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+    }
+
+    .highlight-box p {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .topic {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--primary);
+      font-weight: 750;
+      font-size: 0.94rem;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 26px;
+    }
+
+    .hours-card,
+    .contact-card {
+      padding: 32px;
+    }
+
+    .hours-card h3,
+    .contact-card h3 {
+      margin: 0 0 22px;
+      font-size: 1.6rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .hours-table {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hours-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      font-weight: 750;
+    }
+
+    .hours-row span:last-child {
+      color: var(--primary);
+      text-align: right;
+    }
+
+    .emergency {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid var(--danger-border);
+      background: var(--danger-bg);
+      color: var(--danger-text);
+    }
+
+    .emergency h4 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+    }
+
+    .emergency p {
+      margin: 7px 0;
+    }
+
+    .emergency strong {
+      color: inherit;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .contact-line {
+      display: grid;
+      gap: 4px;
+      padding: 17px 18px;
+      border-radius: 18px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .contact-line small {
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.74rem;
+    }
+
+    .contact-line strong,
+    .contact-line a {
+      color: var(--primary);
+      font-size: 1.03rem;
+      font-weight: 800;
+    }
+
+    .location-box {
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .location-box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .location-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: 1.08rem;
+      color: var(--primary);
+      margin-bottom: 7px;
+    }
+
+    .footer-brand p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-weight: 750;
+      color: var(--primary);
+    }
+
+    @media (max-width: 1080px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-grid,
+      .intro-grid,
+      .prep-wrap,
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        width: min(calc(100% - 26px), var(--max));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-tight {
+        padding: 62px 0;
+      }
+
+      .hero {
+        padding: 54px 0 72px;
+      }
+
+      .hero-panel,
+      .intro-card,
+      .content-card,
+      .team-card,
+      .service-card,
+      .info-card,
+      .hours-card,
+      .contact-card,
+      .highlight-box {
+        padding: 24px;
+      }
+
+      .team-grid,
+      .services-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-item,
+      .hours-row {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-item span:last-child,
+      .hours-row span:last-child {
+        text-align: left;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .nav-contact {
+        min-height: 44px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<header>
+  <header class="site-header">
     <div class="container">
-        <nav>
-            <div class="logo">
-                Hausärzte <span>im Zentrum Kiel</span>
-            </div>
-            <div class="nav-links">
-                <a href="#praxis">Über uns</a>
-                <a href="#leistungen">Leistungen</a>
-                <a href="#team">Ärzte</a>
-                <a href="#kontakt">Kontakt</a>
-            </div>
-            <a href="tel:0431672222" class="btn-call">Tel: 0431 / 67 22 22</a>
-        </nav>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="#start">
+          <strong>Hausärztlich-Internistische Gemeinschaftspraxis</strong>
+          <span>Dr. med. Gabriele Jahnke · Christine Scholand · Bielefeld</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#praxis">Praxis</a>
+          <a href="#team">Team</a>
+          <a href="#leistungen">Leistungen</a>
+          <a href="#sprechzeiten">Sprechzeiten</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <a class="nav-contact" href="tel:+49521179918">0521 / 17 99 18</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main>
-    <section class="hero">
-        <div class="container">
-            <h1>Ihre Gesundheit im Fokus</h1>
-            <p>Dr. med. Peter Schuberth & Dr. med. Frank Sponholz – Ihre erfahrenen Hausärzte direkt am Hauptbahnhof Kiel.</p>
-            <div class="hero-badges">
-                <div class="badge">📍 Sophienblatt 12</div>
-                <div class="badge">👨‍⚕️ Fachärzte für Allgemeinmedizin</div>
-                <div class="badge">🚆 Zentral am Bahnhof</div>
+  <main>
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Hausärztliche Betreuung im Zentrum von Bielefeld</div>
+            <h1>
+              Persönlich. Gründlich. 
+              <span>Allgemein- und internistisch gut versorgt.</span>
+            </h1>
+            <p class="hero-copy">
+              Unsere Praxis gibt Ihnen einen Überblick über allgemein-internistische Leistungen,
+              Vorsorge, Untersuchungen und Beratungen. Dabei verbinden wir medizinische Sorgfalt
+              mit einer möglichst gut organisierten und patientenorientierten Betreuung.
+            </p>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+              <a class="btn btn-secondary" href="#sprechzeiten">Sprechzeiten ansehen</a>
             </div>
+
+            <div class="hero-note">
+              <span class="hero-pill">Ärztehaus im Zentrum</span>
+              <span class="hero-pill">Friedenstraße 1 · 33602 Bielefeld</span>
+              <span class="hero-pill">Kostenfreie Parkplätze vor dem Ärztehaus</span>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Praxisinformationen">
+            <div class="panel-top">
+              <small>Direkt im Blick</small>
+              <strong>Sprechzeiten und Kontakt</strong>
+              <p>Für Terminvereinbarungen und organisatorische Rückfragen erreichen Sie die Praxis telefonisch.</p>
+            </div>
+
+            <div class="panel-list">
+              <div class="panel-item">
+                <span>Vormittags</span>
+                <span>Mo–Fr · 8:00–12:00 Uhr</span>
+              </div>
+              <div class="panel-item">
+                <span>Nachmittags</span>
+                <span>Mo & Do · 14:30–17:00 Uhr</span>
+              </div>
+              <div class="panel-item">
+                <span>Dienstag</span>
+                <span>14:30–17:30 Uhr</span>
+              </div>
+              <div class="panel-item">
+                <span>Telefon</span>
+                <span>0521 / 17 99 18 · 0521 / 6 19 07</span>
+              </div>
+            </div>
+          </aside>
         </div>
+      </div>
     </section>
 
-    <section id="praxis">
-        <div class="container">
-            <h2>Willkommen in unserer Praxis</h2>
-            <div class="intro-text">
-                <p>In unserer modern ausgestatteten Praxis im Herzen von Kiel bieten wir Ihnen das gesamte Spektrum der hausärztlichen Versorgung. Unser Ziel ist eine patientenorientierte Medizin, die auf Vertrauen, Kompetenz und modernster Diagnostik basiert. Wir nehmen uns Zeit für Ihre Anliegen und begleiten Sie in allen Gesundheitsfragen.</p>
-            </div>
+    <section class="section" id="praxis">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Praxis</div>
+          <h2>Medizinische Betreuung mit Zeit für das Wesentliche</h2>
         </div>
+
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>Ihre hausärztlich-internistische Gemeinschaftspraxis in Bielefeld</h3>
+            <p>
+              Über die allgemein-internistischen Leistungen hinaus können in unserer Praxis
+              verschiedene Untersuchungen, Beratungen und Vorsorgeleistungen durchgeführt werden.
+              Unser Praxisteam bedankt sich für Ihr Vertrauen.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <p>
+              Unser Anspruch ist es, Ihnen möglichst ohne lange Wartezeiten zu helfen und zugleich
+              die nötige Zeit für gründliche Untersuchungen und eine ausführliche Beratung zu erhalten.
+            </p>
+            <p>
+              Eine gute Organisation unterstützt dabei den Ablauf für alle Patientinnen und Patienten.
+              Deshalb bitten wir darum, Termine möglichst vorab zu vereinbaren und nicht wahrnehmbare
+              Termine rechtzeitig telefonisch abzusagen.
+            </p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="leistungen" style="background-color: var(--accent);">
-        <div class="container">
-            <h2>Unsere Leistungen</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Vorsorge</h3>
-                    <p>Gesundheits-Check-up (ab 35 J.), Hautkrebs-Screening, Krebsvorsorge für Männer sowie Jugenduntersuchungen.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Diagnostik</h3>
-                    <p>Ruhe- & Belastungs-EKG, Langzeit-Blutdruckmessung, Lungenfunktionstest (Spirometrie) und umfangreiches Labor.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Sonographie</h3>
-                    <p>Ultraschalluntersuchungen der Bauchorgane (Abdomen) und der Schilddrüse zur schnellen Abklärung von Beschwerden.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Impfungen</h3>
-                    <p>Standardimpfungen nach STIKO, Reiseimpfberatung und jährliche Grippeschutzimpfungen.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Chroniker-Programme</h3>
-                    <p>Teilnahme an strukturierten Behandlungsprogrammen (DMP) für Diabetes, KHK, Asthma und COPD.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Zusatzleistungen</h3>
-                    <p>Psychosomatische Grundversorgung, Wundversorgung, Infusionstherapie und notwendige Hausbesuche.</p>
-                </div>
-            </div>
+    <section class="section-tight" id="team">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Ärztinnen</div>
+          <h2>Fachliche Erfahrung in Allgemein- und Innerer Medizin</h2>
         </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <h3>Dr. med. Gabriele Jahnke</h3>
+            <div class="team-role">Fachärztin für Innere und Allgemeinmedizin</div>
+            <p>
+              Medizinstudium in Homburg/Saar, Praktisches Jahr in Boston/USA.
+              Klinische Ausbildung an der Universität Erlangen-Nürnberg in der Inneren Medizin
+              mit Schwerpunkt Nephrologie sowie in Kliniken in Schleswig-Holstein und Nordrhein-Westfalen
+              mit den Schwerpunkten Diabetologie und Kardiologie.
+              Nach fünf Jahren hausärztlicher Tätigkeit in Lippe seit 2008 hausärztlich
+              als Fachärztin für Allgemein- und Innere Medizin in Bielefeld tätig.
+            </p>
+          </article>
+
+          <article class="team-card">
+            <h3>Christine Scholand</h3>
+            <div class="team-role">Fachärztin für Innere Medizin</div>
+            <p>
+              Medizinstudium in Berlin. Klinische Ausbildung am DRK-Krankenhaus Berlin
+              mit Schwerpunkt Pulmonologie, im Klinikum Herford mit Schwerpunkt Onkologie
+              sowie im Klinikum Bielefeld/Rosenhöhe mit Schwerpunkt Gastroenterologie.
+              Seit 2011 hausärztlich tätige Internistin in Bielefeld.
+            </p>
+          </article>
+        </div>
+
+        <div class="team-note">
+          Es liegt eine gemeinsame Befugnis zur Weiterbildung in der Facharztkompetenz Allgemeinmedizin
+          für jeweils 21 Monate vor.
+        </div>
+      </div>
     </section>
 
-    <section id="team">
-        <div class="container">
-            <h2>Ihre Ärzte</h2>
-            <div class="team-flex">
-                <div class="doctor-card">
-                    <div class="doctor-info">
-                        <h3>Dr. med. Peter Schuberth</h3>
-                        <span class="title">Facharzt für Allgemeinmedizin</span>
-                        <p>Spezialisiert auf die umfassende hausärztliche Betreuung und internistische Basisdiagnostik.</p>
-                    </div>
-                </div>
-                <div class="doctor-card">
-                    <div class="doctor-info">
-                        <h3>Dr. med. Frank Sponholz</h3>
-                        <span class="title">Facharzt für Allgemeinmedizin</span>
-                        <p>Experte für Präventivmedizin, psychosomatische Grundversorgung und Langzeitbetreuung.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="section" id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Leistungen</div>
+          <h2>Vorsorge, Diagnostik, Labor und Beratung</h2>
+          <p>
+            Das Leistungsspektrum der Praxis umfasst allgemein-internistische Versorgung,
+            Vorsorgeuntersuchungen, technische Diagnostik, Laborleistungen und beratende Angebote.
+          </p>
         </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3>Vorsorgeleistungen</h3>
+            <ul>
+              <li>Gesundheitscheck vom 18. bis 35. Lebensjahr einmalig</li>
+              <li>Ab dem 35. Lebensjahr Gesundheitscheck alle 3 Jahre</li>
+              <li>Krebsvorsorge bei Männern ab dem 45. Lebensjahr, jährlich</li>
+              <li>Hautkrebsvorsorge ab dem 35. Lebensjahr, alle 2 Jahre</li>
+              <li>Impfungen</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3>Technische Untersuchungen</h3>
+            <ul>
+              <li>Ultraschall des Bauchraumes und der Schilddrüse</li>
+              <li>Lungenfunktionsprüfung</li>
+              <li>Belastungs-EKG</li>
+              <li>24-Stunden-Blutdruckmessung</li>
+              <li>Doppler-Durchblutungsuntersuchung der Beinarterien</li>
+              <li>Tauchmedizinische Untersuchungen nach den Empfehlungen der Deutschen Gesellschaft für Tauch- und Überdruckmedizin</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3>Labortechnische Untersuchungen</h3>
+            <ul>
+              <li>Rheumadiagnostik</li>
+              <li>Speziallabor</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <h3>Beratungen</h3>
+            <ul>
+              <li>Impfberatung</li>
+              <li>Allgemeine Diät- und Ernährungsberatung</li>
+              <li>Fragen zur männlichen Sexualität</li>
+              <li>Diabetes-Behandlung für Typ I, Typ IIa und Typ IIb</li>
+              <li>Insulin-Ersteinstellung für Typ I und Typ II Diabetiker</li>
+              <li>Sportmedizinische Beratung</li>
+              <li>Reisemedizinische Beratung</li>
+              <li>Tabakentwöhnung</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="kontakt">
-        <div class="container">
-            <h2>Sprechzeiten & Erreichbarkeit</h2>
-            <div class="contact-grid">
-                <div class="hours-card">
-                    <table class="hours-table">
-                        <tr><td class="day">Montag</td><td>08:00 – 12:00 Uhr &nbsp;|&nbsp; 15:00 – 18:00 Uhr</td></tr>
-                        <tr><td class="day">Dienstag</td><td>08:00 – 12:00 Uhr &nbsp;|&nbsp; 15:00 – 18:00 Uhr</td></tr>
-                        <tr><td class="day">Mittwoch</td><td>08:00 – 12:00 Uhr</td></tr>
-                        <tr><td class="day">Donnerstag</td><td>08:00 – 12:00 Uhr &nbsp;|&nbsp; 15:00 – 18:00 Uhr</td></tr>
-                        <tr><td class="day">Freitag</td><td>08:00 – 12:00 Uhr</td></tr>
-                    </table>
-                    <p style="margin-top: 25px; font-size: 0.95rem; color: var(--text-light);">
-                        <strong>Rezept-Telefon:</strong> Bestellen Sie Rezepte und Überweisungen einfach vorab über unsere Telefonnummer (Anrufbeantworter).
-                    </p>
-                </div>
-                <div class="contact-info-box">
-                    <h3>Praxis Kiel</h3>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <div>Sophienblatt 12<br>24103 Kiel</div>
-                    </div>
-                    <div class="contact-item">
-                        <span>📞</span>
-                        <div>0431 / 67 22 22</div>
-                    </div>
-                    <div class="contact-item">
-                        <span>📠</span>
-                        <div>0431 / 67 15 15</div>
-                    </div>
-                    <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
-                        Gegenüber dem Kieler Hauptbahnhof. Parken im Parkhaus Sophienhof möglich.
-                    </p>
-                </div>
-            </div>
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Praxisablauf</div>
+          <h2>Gut vorbereitet zum Termin</h2>
         </div>
-    </section>
-</main>
 
-<footer>
+        <div class="prep-wrap">
+          <article class="info-card">
+            <h3>So unterstützen Sie einen reibungslosen Ablauf</h3>
+            <ul class="prep-list">
+              <li>Lassen Sie sich möglichst einen Termin geben und fragen Sie nach günstigen Zeiten oder Notfallterminen.</li>
+              <li>Sagen Sie Termine, die Sie nicht wahrnehmen können, bitte rechtzeitig telefonisch ab.</li>
+              <li>Geben Sie uns Rückmeldung, wenn Sie etwas für verbesserungswürdig halten.</li>
+              <li>Kostenfreie Parkplätze stehen vor dem Ärztehaus zur Verfügung.</li>
+            </ul>
+          </article>
+
+          <aside class="highlight-box">
+            <strong>Bei chronischen Erkrankungen sinnvoll:</strong>
+            <p>
+              Ein Ordner für medizinische Befunde, aktuelle Medikamentenverordnungen und Facharztberichte.
+              Bei Terminen bei Spezialistinnen oder Spezialisten sollten aktuelle Laborwerte, vorhandene Befunde
+              und der Verordnungsplan mitgenommen werden, um unnötige Doppeluntersuchungen zu vermeiden.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="klartext">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Klartext</div>
+          <h2>Verständliche Patienteninformationen</h2>
+          <p>
+            Weil ein gutes Verständnis von Erkrankungen zur Behandlung beiträgt, stellt die Praxis
+            unter dem Titel „KLARTEXT“ leitlinienorientierte Informationen für Patientinnen und Patienten bereit.
+            Sie können über die Homepage eingesehen oder auf Wunsch in der Praxis erhalten werden.
+          </p>
+        </div>
+
+        <article class="info-card">
+          <h3>Themenübersicht</h3>
+          <p>
+            Ergänzend werden als vertrauenswürdige Informationsquellen unter anderem das Robert Koch-Institut
+            bei Fragen zu Infektionserkrankungen und Impfungen sowie das Patientenportal
+            „Internisten im Netz“ empfohlen.
+          </p>
+
+          <div class="topics" aria-label="Klartext-Themen">
+            <span class="topic">Hoher Blutdruck</span>
+            <span class="topic">Akuter Durchfall</span>
+            <span class="topic">Verstopfung</span>
+            <span class="topic">Oberbauchbeschwerden</span>
+            <span class="topic">Blähungen</span>
+            <span class="topic">Ernährung</span>
+            <span class="topic">Erkältung</span>
+            <span class="topic">Hausapotheke</span>
+            <span class="topic">Impfungen</span>
+            <span class="topic">Krebsvorsorge beim Mann</span>
+            <span class="topic">Sonnenschutz</span>
+            <span class="topic">Reizdarmsyndrom</span>
+            <span class="topic">Migräne</span>
+            <span class="topic">Rückenschmerzen</span>
+            <span class="topic">Osteoporose</span>
+            <span class="topic">Schlafstörungen</span>
+            <span class="topic">Trockene Haut</span>
+            <span class="topic">Wadenkrämpfe</span>
+            <span class="topic">Zecken</span>
+            <span class="topic">Hautkrebsvorsorge</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-tight" id="sprechzeiten">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Sprechzeiten</div>
+          <h2>Erreichbarkeit und Notfallhinweise</h2>
+        </div>
+
+        <div class="schedule-grid">
+          <article class="hours-card">
+            <h3>Sprechzeiten</h3>
+
+            <div class="hours-table">
+              <div class="hours-row">
+                <span>Montag bis Freitag</span>
+                <span>8:00 – 12:00 Uhr</span>
+              </div>
+              <div class="hours-row">
+                <span>Montag und Donnerstag</span>
+                <span>14:30 – 17:00 Uhr</span>
+              </div>
+              <div class="hours-row">
+                <span>Dienstag</span>
+                <span>14:30 – 17:30 Uhr</span>
+              </div>
+              <div class="hours-row">
+                <span>Zusätzlich</span>
+                <span>nach Vereinbarung</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hours-card">
+            <h3>Notfälle</h3>
+
+            <div class="emergency">
+              <h4>In dringenden, nicht aufschiebbaren Notfällen</h4>
+              <p><strong>Notfallpraxis Bielefeld</strong><br>Oelmühlenstr. 28</p>
+              <p>Montag, Dienstag und Donnerstag: 18:00 – 8:00 Uhr am Folgetag</p>
+              <p>Mittwoch und Freitag: 13:00 – 8:00 Uhr am Folgetag</p>
+              <p>Samstag, Sonntag und Feiertage: 8:00 – 8:00 Uhr am Folgetag</p>
+              <p><strong>Ärztlicher Notdienst:</strong> 116 117</p>
+              <p><strong>Notarzt:</strong> 112</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Kontakt</div>
+          <h2>So erreichen Sie die Praxis</h2>
+        </div>
+
+        <div class="schedule-grid">
+          <article class="contact-card">
+            <h3>Kontaktinformationen</h3>
+
+            <div class="contact-details">
+              <div class="contact-line">
+                <small>Praxis</small>
+                <strong>Hausärztlich-Internistische Gemeinschaftspraxis</strong>
+              </div>
+
+              <div class="contact-line">
+                <small>Ärztinnen</small>
+                <strong>Dr. med. Gabriele Jahnke · Christine Scholand</strong>
+              </div>
+
+              <div class="contact-line">
+                <small>Telefon</small>
+                <a href="tel:+49521179918">0521 / 17 99 18</a>
+                <a href="tel:+4952161907">0521 / 6 19 07</a>
+              </div>
+
+              <div class="contact-line">
+                <small>Telefax</small>
+                <strong>0521 / 13 93 21</strong>
+              </div>
+
+              <div class="contact-line">
+                <small>E-Mail</small>
+                <a href="mailto:hap-zentrum@t-online.de">hap-zentrum@t-online.de</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <h3>Adresse und Lage</h3>
+
+            <div class="location-box">
+              <strong>Ärztehaus im Zentrum</strong>
+              <p>
+                Friedenstraße 1<br>
+                Nähe Jahnplatz<br>
+                33602 Bielefeld
+              </p>
+            </div>
+
+            <div class="location-box">
+              <strong>Hinweis zur Anfahrt</strong>
+              <p>
+                Kostenfreie Parkplätze stehen vor dem Ärztehaus zur Verfügung.
+              </p>
+            </div>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="tel:+49521179918">Jetzt anrufen</a>
+              <a class="btn btn-secondary" href="mailto:hap-zentrum@t-online.de">E-Mail schreiben</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Hausärzte im Zentrum</h4>
-                <p>Ihre Partner für Gesundheit in Kiel. Zentral gelegen, fachlich kompetent und persönlich.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Adresse</h4>
-                <p>Sophienblatt 12<br>24103 Kiel</p>
-            </div>
-            <div class="footer-col">
-                <h4>Direktkontakt</h4>
-                <p>Telefon: 0431 / 67 22 22<br>Fax: 0431 / 67 15 15</p>
-            </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>Hausärztlich-Internistische Gemeinschaftspraxis</strong>
+          <p>
+            Dr. med. Gabriele Jahnke · Christine Scholand<br>
+            Ärztehaus im Zentrum · Friedenstraße 1 · 33602 Bielefeld
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Hausärzte im Zentrum Kiel</p>
-            <div class="footer-legal">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-            </div>
-        </div>
-    </div>
-</footer>
 
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="#start">Nach oben</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
